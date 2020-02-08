@@ -22,6 +22,7 @@ class ListViewController: UIViewController {
         setupNav()
         listTableView.dataSource = self
         listTableView.delegate = self
+
     }
    
     
@@ -46,6 +47,7 @@ class ListViewController: UIViewController {
     
     
     @IBAction func addButton(_ sender: UIBarButtonItem) {
+        
         
     }
    
