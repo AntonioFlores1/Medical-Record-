@@ -28,7 +28,7 @@ class ProfileViewController: UIViewController {
         
         profileView.layer.borderColor = UIColor.black.cgColor
         profileView.layer.cornerRadius = 22
-        
+        profileTableView.dataSource = self
     }
     
 
@@ -37,14 +37,33 @@ class ProfileViewController: UIViewController {
 }
 
 extension ProfileViewController: UITableViewDataSource {
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 5
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell
+        if indexPath.row == 0 {
+            let cell = profileTableView.dequeueReusableCell(withIdentifier: "profile")
+            return cell!
+        } else if indexPath.row == 1 {
+            let cell = profileTableView.dequeueReusableCell(withIdentifier: "profile1")
+             return cell!
+        } else if indexPath.row == 2 {
+            let cell = profileTableView.dequeueReusableCell(withIdentifier: "profile2")
+             return cell!
+        } else if indexPath.row == 3 {
+            let cell = profileTableView.dequeueReusableCell(withIdentifier: "profile3")
+             return cell!
+        } else if indexPath.row == 4 {
+            let cell = profileTableView.dequeueReusableCell(withIdentifier: "profile4")
+             return cell!
+        } else {
+            let cell = profileTableView.dequeueReusableCell(withIdentifier: "profile1")
+                        return cell!
+        } 
+        
+
+        
+//        return cell
     }
-    
-    
 }
