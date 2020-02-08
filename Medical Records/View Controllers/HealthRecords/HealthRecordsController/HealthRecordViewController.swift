@@ -16,6 +16,7 @@ class HealthRecordViewController: UIViewController {
     let healthBoxes = ["Allergies","Past Procedures","Medication","Conditions","Immunization","Lab Results"]
     
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -43,15 +44,13 @@ extension HealthRecordViewController: UICollectionViewDataSource {
         
         let titles = healthBoxes[indexPath.row]
         
-        collectionCell.healthIcon.image = UIImage(systemName: "plus")
+        collectionCell.healthIcon.image = UIImage(named: healthBoxes[indexPath.row])
+        collectionCell.healthLabel.textColor = .black
         collectionCell.healthLabel.text = titles
         collectionCell.backgroundColor = .systemBackground
         
         return collectionCell
     }
-    
-    
-    
 }
 
 extension HealthRecordViewController: UICollectionViewDelegateFlowLayout {
@@ -67,7 +66,7 @@ extension HealthRecordViewController: UICollectionViewDelegateFlowLayout {
         
         let itemWidth: CGFloat = (maxWidth - totalSpacing)/numberOfItems
         
-        return CGSize(width: itemWidth, height: itemWidth * 1.2)
+        return CGSize(width: itemWidth, height: itemWidth * 1.15)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
