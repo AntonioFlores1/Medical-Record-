@@ -24,6 +24,8 @@
 		A9598C2523EE7C440049E03B /* ImageKit in Frameworks */ = {isa = PBXBuildFile; productRef = A9598C2423EE7C440049E03B /* ImageKit */; };
 		A9598C2823EE81EC0049E03B /* ScanDocViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9598C2723EE81EC0049E03B /* ScanDocViewController.swift */; };
 		A985D86523EE8A77009B1FE5 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A985D86423EE8A77009B1FE5 /* ProfileViewController.swift */; };
+		B7F81EC723EF34FB00A4B257 /* PatientData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F81EC623EF34FB00A4B257 /* PatientData.swift */; };
+		B7F81EC923EF448A00A4B257 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F81EC823EF448A00A4B257 /* Model.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +47,8 @@
 		A9598C2123EE7BD10049E03B /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
 		A9598C2723EE81EC0049E03B /* ScanDocViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanDocViewController.swift; sourceTree = "<group>"; };
 		A985D86423EE8A77009B1FE5 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		B7F81EC623EF34FB00A4B257 /* PatientData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientData.swift; sourceTree = "<group>"; };
+		B7F81EC823EF448A00A4B257 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +100,7 @@
 				A985D86323EE8A67009B1FE5 /* Profile */,
 				A9598C1A23EE7AEB0049E03B /* HealthRecords */,
 				A9598C2623EE81BE0049E03B /* ScanDoc */,
+				B7F81EC823EF448A00A4B257 /* Model.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -200,6 +205,7 @@
 			isa = PBXGroup;
 			children = (
 				A985D86423EE8A77009B1FE5 /* ProfileViewController.swift */,
+				B7F81EC623EF34FB00A4B257 /* PatientData.swift */,
 			);
 			name = Profile;
 			sourceTree = "<group>";
@@ -289,8 +295,10 @@
 				A9598C1623EE78010049E03B /* SearchResultsTableViewCell.swift in Sources */,
 				A9598C0823EE65BE0049E03B /* HealthRecordViewController.swift in Sources */,
 				A985D86523EE8A77009B1FE5 /* ProfileViewController.swift in Sources */,
+				B7F81EC923EF448A00A4B257 /* Model.swift in Sources */,
 				A9598BF123EE65180049E03B /* AppDelegate.swift in Sources */,
 				A9598C0C23EE65F30049E03B /* SearchListViewController.swift in Sources */,
+				B7F81EC723EF34FB00A4B257 /* PatientData.swift in Sources */,
 				A9598C1423EE77ED0049E03B /* SearchTableViewCell.swift in Sources */,
 				A9598C0A23EE65DB0049E03B /* ListViewController.swift in Sources */,
 				A9598BF323EE65180049E03B /* SceneDelegate.swift in Sources */,
