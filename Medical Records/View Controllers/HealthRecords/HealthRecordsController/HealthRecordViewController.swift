@@ -19,16 +19,15 @@ class HealthRecordViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        healthCollectionView.backgroundColor = .systemBackground
 
         healthCollectionView.dataSource = self
         healthCollectionView.delegate = self
-        // make nav title big
+        navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.title = "Health Records"
+        
+        // healthCollectionView.register(HealthCollectionViewCell.self, forCellWithReuseIdentifier: "health")
     }
-    
-
-    
-    
 
 }
 
@@ -39,7 +38,7 @@ extension HealthRecordViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let collectionCell = healthCollectionView.dequeueReusableCell(withReuseIdentifier: "health", for: indexPath) as? HealthCollectionViewCell else {
-            return UICollectionViewCell()
+            fatalError("issue here")
         }
         
         let titles = healthBoxes[indexPath.row]
