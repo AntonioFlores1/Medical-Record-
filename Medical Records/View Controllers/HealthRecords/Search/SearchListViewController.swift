@@ -21,17 +21,17 @@ class SearchListViewController: UIViewController {
     
     
     var dummy: String?
-    var defaultArray = [Allergies(name: "Milk", reaction: "rank_last_week", severity: "Severe"),
-                    Allergies(name: "Paper", reaction: "rank_last_week", severity: "Mild"),
-                    Allergies(name: "rank", reaction: "rank_last_week", severity: "Severe"),
-                    Allergies(name: "Bees", reaction: "rank_last_week", severity: "Moderate"),
-                    Allergies(name: "Pan", reaction: "rank_last_week", severity: "Mild"),
-                    Allergies(name: "Sink", reaction: "rank_last_week", severity: "Moderate")]
-//
+    var defaultArray = [Allergy(name: "Milk", reaction: "rank_last_week", severity: "Severe"),
+                    Allergy(name: "Paper", reaction: "rank_last_week", severity: "Mild"),
+                    Allergy(name: "rank", reaction: "rank_last_week", severity: "Severe"),
+                    Allergy(name: "Bees", reaction: "rank_last_week", severity: "Moderate"),
+                    Allergy(name: "Pan", reaction: "rank_last_week", severity: "Mild"),
+                    Allergy(name: "Sink", reaction: "rank_last_week", severity: "Moderate")]
+
 //    var defaultArray = ["rank","rank_last_week","weeks_on_list","asterisk","dagger","primary_isbn10", "0735211299","primary_isbn13","9780735211292","publisher","Avery","description","price","title","ATOMIC HABITS","author","James Clear","contributor","by James Clear","contributor_note","book_image","book_image_width"]
     
     
-    var dummyData = [Allergies]() {
+    var dummyData = [Allergy]() {
         didSet {
             searchListTableView.reloadData()
         }
