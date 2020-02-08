@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="NFA-au-gWa">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="NFA-au-gWa">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -34,23 +34,25 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cno-gg-6YB">
-                                                    <rect key="frame" x="0.0" y="120" width="141" height="23"/>
-                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="19"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <rect key="frame" x="0.0" y="106.5" width="141" height="21.5"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="thin" pointSize="18"/>
+                                                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4PD-5V-mlz">
-                                                    <rect key="frame" x="0.0" y="0.0" width="141" height="120"/>
+                                                    <rect key="frame" x="40.5" y="41.5" width="60" height="60"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="60" id="IUj-u9-cPz"/>
+                                                        <constraint firstAttribute="height" constant="60" id="VH1-db-ZC9"/>
+                                                    </constraints>
                                                 </imageView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="cno-gg-6YB" secondAttribute="bottom" constant="0.10000000000000001" id="57d-LG-qrO"/>
-                                                <constraint firstItem="4PD-5V-mlz" firstAttribute="leading" secondItem="q1D-Yx-AKc" secondAttribute="leading" constant="0.10000000000000001" id="DK3-V5-CHy"/>
-                                                <constraint firstItem="cno-gg-6YB" firstAttribute="leading" secondItem="q1D-Yx-AKc" secondAttribute="leading" constant="0.10000000000000001" id="EQ1-Q6-0rO"/>
-                                                <constraint firstAttribute="trailing" secondItem="4PD-5V-mlz" secondAttribute="trailing" constant="0.10000000000000001" id="Etu-RI-EoD"/>
-                                                <constraint firstAttribute="trailing" secondItem="cno-gg-6YB" secondAttribute="trailing" constant="0.10000000000000001" id="PWL-ZG-JGw"/>
-                                                <constraint firstItem="4PD-5V-mlz" firstAttribute="top" secondItem="q1D-Yx-AKc" secondAttribute="top" constant="0.10000000000000001" id="hXT-aY-zPt"/>
-                                                <constraint firstItem="cno-gg-6YB" firstAttribute="top" secondItem="4PD-5V-mlz" secondAttribute="bottom" constant="0.10000000000000001" id="uhg-DZ-KPo"/>
+                                                <constraint firstAttribute="bottom" secondItem="cno-gg-6YB" secondAttribute="bottom" constant="15" id="M49-xZ-LVd"/>
+                                                <constraint firstItem="cno-gg-6YB" firstAttribute="leading" secondItem="q1D-Yx-AKc" secondAttribute="leading" id="Pet-qs-RfU"/>
+                                                <constraint firstItem="4PD-5V-mlz" firstAttribute="centerY" secondItem="q1D-Yx-AKc" secondAttribute="centerY" id="Rtp-Mz-vyO"/>
+                                                <constraint firstAttribute="trailing" secondItem="cno-gg-6YB" secondAttribute="trailing" id="cTo-te-qhT"/>
+                                                <constraint firstItem="4PD-5V-mlz" firstAttribute="centerX" secondItem="q1D-Yx-AKc" secondAttribute="centerX" id="wOB-aF-qg9"/>
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="141" height="143"/>
