@@ -47,6 +47,16 @@ extension HealthRecordViewController: UICollectionViewDataSource {
         collectionCell.healthLabel.textColor = .black
         collectionCell.healthLabel.text = titles
         collectionCell.backgroundColor = .systemBackground
+        collectionCell.layer.borderColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        collectionCell.layer.cornerRadius = 10
+        collectionCell.layer.borderWidth = 1
+        collectionCell.contentView.layer.masksToBounds = true
+        collectionCell.layer.shadowColor =  #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1) //UIColor.lightGray.cgColor
+        collectionCell.layer.shadowOffset = CGSize(width: 0, height: 2.0)
+        collectionCell.layer.shadowRadius = 2.0
+        collectionCell.layer.shadowOpacity = 1.0
+        collectionCell.layer.masksToBounds = false
+        collectionCell.layer.shadowPath = UIBezierPath(roundedRect: collectionCell.bounds, cornerRadius: collectionCell.contentView.layer.cornerRadius).cgPath
         
         return collectionCell
     }
@@ -65,7 +75,7 @@ extension HealthRecordViewController: UICollectionViewDelegateFlowLayout {
         
         let itemWidth: CGFloat = (maxWidth - totalSpacing)/numberOfItems
         
-        return CGSize(width: itemWidth, height: itemWidth * 1.15)
+        return CGSize(width: itemWidth, height: itemWidth)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
