@@ -19,7 +19,7 @@ class HealthRecordViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
+        healthCollectionView.dataSource = self
         
     }
     
@@ -28,3 +28,26 @@ class HealthRecordViewController: UIViewController {
     
 
 }
+
+extension HealthRecordViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return healthBoxes.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let collectionCell = healthCollectionView.dequeueReusableCell(withReuseIdentifier: "health", for: indexPath) as? HealthCollectionViewCell else {
+            return UICollectionViewCell()
+        }
+        
+        let titles = healthBoxes[indexPath.row]
+        
+        collectionCell.healthIcon.image = UIImage(systemName: "plus")
+        collectionCell.healthLabel.text = titles
+        
+        return collectionCell
+    }
+    
+    
+    
+}
+
