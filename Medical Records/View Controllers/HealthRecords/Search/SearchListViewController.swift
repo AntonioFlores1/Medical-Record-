@@ -17,10 +17,35 @@ class SearchListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-       
+        searchListTableView.dataSource = self
+        searchBar.delegate = self
     }
     
 
     
 
+}
+
+extension SearchListViewController:UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 10
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = searchListTableView.dequeueReusableCell(withIdentifier: "search", for: indexPath)
+        
+        cell.detailTextLabel!.text = "Hello"
+        cell.textLabel!.text = "Thing"
+        
+        return cell
+        
+    }
+    
+    
+}
+
+extension SearchListViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        
+    }
 }
