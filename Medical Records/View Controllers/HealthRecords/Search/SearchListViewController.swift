@@ -74,9 +74,7 @@ class SearchListViewController: UIViewController {
     @IBAction func saveButton(_ sender: UIButton) {
         self.create.transform = CGAffineTransform.init(translationX: 0, y: 800)
     
-        
-        healthDelegate?.update(allergy: "fd", Severity: "fa")
-        
+
         showAlert(message: "Information has been saved")
     }
     
