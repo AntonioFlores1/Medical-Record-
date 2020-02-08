@@ -12,11 +12,14 @@ protocol updateHealth:AnyObject {
     func update()
 }
 
+
 class SearchListViewController: UIViewController {
     
     @IBOutlet weak var searchListTableView: UITableView!
     
     @IBOutlet weak var searchBar: UISearchBar!
+    
+    
     
     
     
@@ -54,7 +57,12 @@ class SearchListViewController: UIViewController {
         
     }
     
-  
+    @IBAction func createButton(_ sender: UIButton) {
+        
+        
+        present(<#T##viewControllerToPresent: UIViewController##UIViewController#>, animated: <#T##Bool#>, completion: <#T##(() -> Void)?##(() -> Void)?##() -> Void#>)
+    }
+    
     
     
 }
