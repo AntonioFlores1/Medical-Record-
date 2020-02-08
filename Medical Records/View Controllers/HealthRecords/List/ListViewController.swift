@@ -8,9 +8,24 @@
 
 import UIKit
 
+struct Allergies {
+    var name: String
+    var reaction: String
+    var severity: String
+}
+
 class ListViewController: UIViewController {
 
     @IBOutlet weak var listTableView: UITableView!
+    
+//   var defaultArray = [0:[Allergies(name: "Milk", reaction: "rank_last_week", severity: "Severe"),
+//                      Allergies(name: "Paper", reaction: "rank_last_week", severity: "Mild"),
+//                    Allergies(name: "rank", reaction: "rank_last_week", severity: "Severe"),
+//                      Allergies(name: "Bees", reaction: "rank_last_week", severity: "Moderate"),
+//                    Allergies(name: "Pan", reaction: "rank_last_week", severity: "Mild"),
+//                     Allergies(name: "Sink", reaction: "rank_last_week", severity: "Moderate")]]
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,7 +33,17 @@ class ListViewController: UIViewController {
         
     }
     
+    
+    @IBAction func addButton(_ sender: UIBarButtonItem) {
+       
+        
+        
+        
+    }
+   
+        
 
+    }
+        
     
 
-}

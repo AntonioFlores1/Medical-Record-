@@ -19,7 +19,7 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="JN9-3A-Pih">
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="kkO-5l-PUC">
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="kkO-5l-PUC">
                                     <size key="itemSize" width="141" height="143"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -159,7 +159,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="VeD-fZ-crD">
-                                <rect key="frame" x="0.0" y="144" width="414" height="251"/>
+                                <rect key="frame" x="0.0" y="144" width="414" height="669"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="search" textLabel="q7O-v1-gNa" detailTextLabel="jsT-fR-kfp" style="IBUITableViewCellStyleSubtitle" id="3ge-bh-Jh8" customClass="SearchResultsTableViewCell" customModule="Medical_Records" customModuleProvider="target">
@@ -191,13 +191,13 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="VeD-fZ-crD" firstAttribute="leading" secondItem="fe1-Px-rwH" secondAttribute="leading" constant="0.10000000000000001" id="45a-zF-3gb"/>
                             <constraint firstItem="oqk-PU-OKv" firstAttribute="leading" secondItem="fe1-Px-rwH" secondAttribute="leading" constant="0.10000000000000001" id="CeB-XY-xQO"/>
-                            <constraint firstItem="fe1-Px-rwH" firstAttribute="trailing" secondItem="VeD-fZ-crD" secondAttribute="trailing" constant="0.10000000000000001" id="EkT-YY-wA8"/>
-                            <constraint firstItem="VeD-fZ-crD" firstAttribute="top" secondItem="oqk-PU-OKv" secondAttribute="bottom" constant="0.10000000000000001" id="GVy-ps-rnj"/>
+                            <constraint firstItem="fe1-Px-rwH" firstAttribute="bottom" secondItem="VeD-fZ-crD" secondAttribute="bottom" constant="0.10000000000000001" id="Jrg-m6-0fE"/>
                             <constraint firstItem="oqk-PU-OKv" firstAttribute="top" secondItem="fe1-Px-rwH" secondAttribute="top" constant="0.10000000000000001" id="N8K-h2-GWO"/>
+                            <constraint firstItem="VeD-fZ-crD" firstAttribute="trailing" secondItem="fe1-Px-rwH" secondAttribute="trailing" constant="0.10000000000000001" id="Z5Y-LE-JUn"/>
+                            <constraint firstItem="VeD-fZ-crD" firstAttribute="leading" secondItem="fe1-Px-rwH" secondAttribute="leading" constant="0.10000000000000001" id="dE4-37-3LE"/>
                             <constraint firstItem="oqk-PU-OKv" firstAttribute="trailing" secondItem="fe1-Px-rwH" secondAttribute="trailing" constant="0.10000000000000001" id="mC5-XT-l8E"/>
-                            <constraint firstItem="VeD-fZ-crD" firstAttribute="height" secondItem="6iP-D9-9LU" secondAttribute="height" multiplier="0.28" id="sTy-n3-jeF"/>
+                            <constraint firstItem="VeD-fZ-crD" firstAttribute="top" secondItem="oqk-PU-OKv" secondAttribute="bottom" constant="0.10000000000000001" id="nCK-tA-OdG"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="fe1-Px-rwH"/>
                     </view>
