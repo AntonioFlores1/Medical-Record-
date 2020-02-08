@@ -9,5 +9,9 @@
 import UIKit
 
 class HealthCollectionViewCell: UICollectionViewCell {
+    @IBOutlet weak var healthIcon: UIImageView!
+    
+    @IBOutlet weak var healthLabel: UILabel!
+    
     
 }
