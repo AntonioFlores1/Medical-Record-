@@ -25,8 +25,17 @@ class HealthRecordViewController: UIViewController {
         healthCollectionView.delegate = self
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.title = "Health Records"
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let listVC = segue.destination as? ListViewController, let indexpath = healthCollectionView.indexPathsForSelectedItems else {
+            fatalError("no list VC")
+        }
         
-        // healthCollectionView.register(HealthCollectionViewCell.self, forCellWithReuseIdentifier: "health")
+        let index = indexpath[0].row
+        
+        listVC.index = index
+        
     }
 
 }
@@ -51,12 +60,12 @@ extension HealthRecordViewController: UICollectionViewDataSource {
         collectionCell.layer.cornerRadius = 10
         collectionCell.layer.borderWidth = 1
         collectionCell.contentView.layer.masksToBounds = true
-        collectionCell.layer.shadowColor =  #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1) //UIColor.lightGray.cgColor
+        collectionCell.layer.shadowColor =  #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1) 
         collectionCell.layer.shadowOffset = CGSize(width: 0, height: 2.0)
         collectionCell.layer.shadowRadius = 2.0
         collectionCell.layer.shadowOpacity = 1.0
         collectionCell.layer.masksToBounds = false
-        collectionCell.layer.shadowPath = UIBezierPath(roundedRect: collectionCell.bounds, cornerRadius: collectionCell.contentView.layer.cornerRadius).cgPath
+        collectionCell.layer.shadowPath = UIBezierPath(roundedRect: collectionCell.bounds,cornerRadius:collectionCell.contentView.layer.cornerRadius).cgPath
         
         return collectionCell
     }
