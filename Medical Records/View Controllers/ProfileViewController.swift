@@ -16,10 +16,28 @@ class ProfileViewController: UIViewController {
     
     @IBOutlet weak var profilePicture: UIImageView!
     
+    @IBOutlet weak var blur: UIVisualEffectView!
+    var effect: UIVisualEffect?
+    
+    // feild outlets
+    
+    @IBOutlet weak var insuranceFeild: UILabel!
+    @IBOutlet weak var addressFeild: UILabel!
+    @IBOutlet weak var heightFeild: UILabel!
+    @IBOutlet weak var weightFeild: UILabel!
+    @IBOutlet weak var emFeild: UILabel!
+    
+    @IBOutlet weak var toggle: UISwitch!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+         effect = blur.effect
+        blur.effect = nil 
+        toggle.isOn = false
+        
+        loadData()
+        
         profileView.layer.shadowColor =  #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
         profileView.layer.shadowOffset = CGSize(width: 0, height: 2.0)
         profileView.layer.shadowRadius = 4.0
@@ -35,12 +53,29 @@ class ProfileViewController: UIViewController {
         
         profileView.layer.borderColor = UIColor.black.cgColor
         profileView.layer.cornerRadius = 22
-        profileTableView.dataSource = self
+        //profileTableView.dataSource = self
     }
     
-
     
-
+    func loadData() {
+        insuranceFeild.text = "Aetna"
+        addressFeild.text = "111 One Street Brooklyn NY 11121"
+        heightFeild.text = "5'4"
+        weightFeild.text = "130 lb"
+        emFeild.text = "Weil Cornel (123) 222-444"
+    }
+    
+    @IBAction func blurToggled(_ sender: UISwitch) {
+        
+        blur.effect = nil
+        
+        if sender.isOn {
+            blur.effect = effect
+        } else {
+            blur.effect = nil
+        }
+        
+    }
 }
 
 extension ProfileViewController: UITableViewDataSource {
@@ -68,9 +103,8 @@ extension ProfileViewController: UITableViewDataSource {
             let cell = profileTableView.dequeueReusableCell(withIdentifier: "profile1")
                         return cell!
         } 
-        
-
-        
-//        return cell
     }
+    
+    
+    
 }
