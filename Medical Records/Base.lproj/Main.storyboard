@@ -499,27 +499,40 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Wd6-vs-qx8">
-                                <rect key="frame" x="0.0" y="88" width="414" height="627.5"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Wd6-vs-qx8">
+                                <rect key="frame" x="0.0" y="88" width="414" height="582.5"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oIu-bx-9Js">
-                                <rect key="frame" x="60" y="747.5" width="294" height="39"/>
+                                <rect key="frame" x="60" y="696.5" width="294" height="39"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <state key="normal" title="Extract"/>
                                 <connections>
                                     <action selector="scanButton:" destination="vKz-9S-Gbc" eventType="touchUpInside" id="PQH-dc-OHV"/>
                                 </connections>
                             </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="KGP-re-fdx">
+                                <rect key="frame" x="101" y="763" width="212" height="32"/>
+                                <segments>
+                                    <segment title="Document"/>
+                                    <segment title="QR"/>
+                                </segments>
+                                <connections>
+                                    <action selector="cams:" destination="vKz-9S-Gbc" eventType="valueChanged" id="YSh-va-pq8"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Wd6-vs-qx8" firstAttribute="height" secondItem="Xra-z7-0EO" secondAttribute="height" multiplier="0.7" id="CMb-Oo-8tz"/>
+                            <constraint firstItem="Wd6-vs-qx8" firstAttribute="height" secondItem="Xra-z7-0EO" secondAttribute="height" multiplier="0.65" id="CMb-Oo-8tz"/>
                             <constraint firstItem="Wd6-vs-qx8" firstAttribute="leading" secondItem="JOs-as-jv8" secondAttribute="leading" constant="0.10000000000000001" id="EYY-yp-Ejd"/>
+                            <constraint firstItem="JOs-as-jv8" firstAttribute="trailing" secondItem="KGP-re-fdx" secondAttribute="trailing" constant="101" id="EqI-it-DNs"/>
                             <constraint firstItem="JOs-as-jv8" firstAttribute="trailing" secondItem="Wd6-vs-qx8" secondAttribute="trailing" constant="0.10000000000000001" id="GbB-OT-98g"/>
+                            <constraint firstItem="KGP-re-fdx" firstAttribute="leading" secondItem="JOs-as-jv8" secondAttribute="leading" constant="101" id="JXd-o8-rig"/>
                             <constraint firstItem="oIu-bx-9Js" firstAttribute="leading" secondItem="JOs-as-jv8" secondAttribute="leading" constant="60" id="fC3-pQ-O2X"/>
                             <constraint firstItem="Wd6-vs-qx8" firstAttribute="top" secondItem="JOs-as-jv8" secondAttribute="top" constant="0.10000000000000001" id="gHX-Jy-eE8"/>
+                            <constraint firstItem="KGP-re-fdx" firstAttribute="top" secondItem="oIu-bx-9Js" secondAttribute="bottom" constant="27.5" id="tJ1-Ol-Mi8"/>
                             <constraint firstItem="JOs-as-jv8" firstAttribute="trailing" secondItem="oIu-bx-9Js" secondAttribute="trailing" constant="60" id="voG-s7-iMo"/>
-                            <constraint firstItem="oIu-bx-9Js" firstAttribute="top" secondItem="Wd6-vs-qx8" secondAttribute="bottom" constant="32" id="zW5-U3-tTP"/>
+                            <constraint firstItem="oIu-bx-9Js" firstAttribute="top" secondItem="Wd6-vs-qx8" secondAttribute="bottom" constant="26" id="zW5-U3-tTP"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="JOs-as-jv8"/>
                     </view>
@@ -531,7 +544,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FUr-uW-pC4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2331.8840579710145" y="862.5"/>
+            <point key="canvasLocation" x="2330.434782608696" y="862.5"/>
         </scene>
         <!--Extract View Controller-->
         <scene sceneID="XAp-0y-llI">

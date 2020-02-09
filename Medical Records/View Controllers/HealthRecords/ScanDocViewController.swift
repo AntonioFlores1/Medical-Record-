@@ -17,7 +17,6 @@ class ScanDocViewController: UIViewController,VNDocumentCameraViewControllerDele
     
     @IBOutlet weak var extractButton: UIButton!
     
-    
     var textRecognitionRequest = VNRecognizeTextRequest()
     
     var recognizedText = ""
@@ -33,7 +32,6 @@ class ScanDocViewController: UIViewController,VNDocumentCameraViewControllerDele
         self.present(documentCameraViewController, animated: true, completion: nil)
         extract = true
         extractButton.isHidden = true
-        
         
         textRecognitionRequest = VNRecognizeTextRequest(completionHandler: { (request, error) in
             if let results = request.results, !results.isEmpty {
@@ -58,6 +56,7 @@ class ScanDocViewController: UIViewController,VNDocumentCameraViewControllerDele
         switch sender.selectedSegmentIndex {
         case 0 :
             if extract == true {
+                view.backgroundColor = .red
                 extractButton.isHidden = false
                 
             } else {
@@ -66,6 +65,7 @@ class ScanDocViewController: UIViewController,VNDocumentCameraViewControllerDele
                 self.present(documentCameraViewController, animated: true, completion: nil)
             }
         case 1:
+            
             view.backgroundColor = .blue
             
         default:
@@ -97,10 +97,20 @@ class ScanDocViewController: UIViewController,VNDocumentCameraViewControllerDele
             fatalError("Couldn't segue")
         }
         
+        if let image = docImage.image {
+            extractButton.setTitle("Extract", for: .normal)
+            extractButton.isHidden = false
+            extract = true
+
+        } else {
+            extractButton.setTitle("Scan", for: .normal)
+            extractButton.isHidden = false
+            extract = false
+        }
         
         controller.dismiss(animated: true)
-        extractViewController.dataExtract = myData
-        present(extractViewController, animated: true, completion: nil)
+//        extractViewController.dataExtract = myData
+//        present(extractViewController, animated: true, completion: nil)
         
     }
 }
