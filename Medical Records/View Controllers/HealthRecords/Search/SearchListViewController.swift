@@ -24,20 +24,22 @@ class SearchListViewController: UIViewController {
     
     @IBOutlet weak var severityTextField: UITextField!
     
+    @IBOutlet weak var saveButton: UIButton!
     
     var dummy: String?
-    
-    weak var healthDelegate: updateHealthDelegate!
+  
+    var defaultArray = [Allergy(name: "Milk", reaction: "rank_last_week", severity: "Severe"),
+                    Allergy(name: "Paper", reaction: "rank_last_week", severity: "Mild"),
+                    Allergy(name: "rank", reaction: "rank_last_week", severity: "Severe"),
+                    Allergy(name: "Bees", reaction: "rank_last_week", severity: "Moderate"),
+                    Allergy(name: "Pan", reaction: "rank_last_week", severity: "Mild"),
+                    Allergy(name: "Sink", reaction: "rank_last_week", severity: "Moderate")]
 
-    var defaultArray = [Allergies(name: "Milk", reaction: "rank_last_week", severity: "Severe"),
-                    Allergies(name: "Paper", reaction: "rank_last_week", severity: "Mild"),
-                    Allergies(name: "rank", reaction: "rank_last_week", severity: "Severe"),
-                    Allergies(name: "Bees", reaction: "rank_last_week", severity: "Moderate"),
-                    Allergies(name: "Pan", reaction: "rank_last_week", severity: "Mild"),
-                    Allergies(name: "Sink", reaction: "rank_last_week", severity: "Moderate")]
+//    var defaultArray = ["rank","rank_last_week","weeks_on_list","asterisk","dagger","primary_isbn10", "0735211299","primary_isbn13","9780735211292","publisher","Avery","description","price","title","ATOMIC HABITS","author","James Clear","contributor","by James Clear","contributor_note","book_image","book_image_width"]
+
     
     
-    var dummyData = [Allergies]() {
+    var dummyData = [Allergy]() {
         didSet {
             searchListTableView.reloadData()
         }
@@ -57,7 +59,7 @@ class SearchListViewController: UIViewController {
         searchListTableView.delegate = self
         searchBar.delegate = self
         self.create.transform = CGAffineTransform.init(translationX: 0, y: 800)
-        
+        saveButton.setTitle("Cancel", for: .normal)
     }
    
     
@@ -67,15 +69,15 @@ class SearchListViewController: UIViewController {
         UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
             self.create.transform = CGAffineTransform.init(translationX: 0, y: 0)
         })
+        
+        
 
     }
     
     @IBAction func saveButton(_ sender: UIButton) {
         self.create.transform = CGAffineTransform.init(translationX: 0, y: 800)
     
-        
-        healthDelegate?.update(allergy: "fd", Severity: "fa")
-        
+
         showAlert(message: "Information has been saved")
     }
     
