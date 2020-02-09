@@ -20,7 +20,14 @@ class ProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        profileView.layer.shadowColor =  #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+        profileView.layer.shadowOffset = CGSize(width: 0, height: 2.0)
+        profileView.layer.shadowRadius = 4.0
+        profileView.layer.shadowOpacity = 1.0
+        profileView.layer.masksToBounds = false
+        
+        
+        
         profilePicture.layer.cornerRadius = profilePicture.frame.size.width/2
         profileView.layer.borderColor = UIColor.red.cgColor
         profilePicture.layer.masksToBounds = true

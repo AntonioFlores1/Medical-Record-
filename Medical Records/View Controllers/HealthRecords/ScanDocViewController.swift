@@ -15,11 +15,64 @@ class ScanDocViewController: UIViewController,VNDocumentCameraViewControllerDele
     
     @IBOutlet weak var docImage: UIImageView!
     
+    @IBOutlet weak var extractButton: UIButton!
+    
+    
+    var textRecognitionRequest = VNRecognizeTextRequest()
+    
+    var recognizedText = ""
+    
+    var extract = false
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        let documentCameraViewController = VNDocumentCameraViewController()
+        documentCameraViewController.delegate = self
+        self.present(documentCameraViewController, animated: true, completion: nil)
+        extract = true
+        extractButton.isHidden = true
         
+        
+        textRecognitionRequest = VNRecognizeTextRequest(completionHandler: { (request, error) in
+            if let results = request.results, !results.isEmpty {
+                if let requestResults = request.results as? [VNRecognizedTextObservation] {
+                    self.recognizedText = ""
+                    for observation in requestResults {
+                        guard let candidiate = observation.topCandidates(1).first else { return }
+                        self.recognizedText += candidiate.string
+                        self.recognizedText += "\n"
+                    }
+//                    self.catDetailsTextView.text = self.recognizedText
+                }
+            }
+        })
+        textRecognitionRequest.recognitionLevel = .accurate
+        textRecognitionRequest.usesLanguageCorrection = false
+        textRecognitionRequest.customWords = ["@gmail.com", "@outlook.com", "@yahoo.com", "@icloud.com"]
+    }
+    
+    
+    @IBAction func cams(_ sender: UISegmentedControl) {
+        switch sender.selectedSegmentIndex {
+        case 0 :
+            if extract == true {
+                extractButton.isHidden = false
+                
+            } else {
+                let documentCameraViewController = VNDocumentCameraViewController()
+                documentCameraViewController.delegate = self
+                self.present(documentCameraViewController, animated: true, completion: nil)
+            }
+        case 1:
+            view.backgroundColor = .blue
+            
+        default:
+            print("no")
+        }
         
     }
+    
     
     
     @IBAction func scanButton(_ sender: UIButton) {
@@ -32,12 +85,15 @@ class ScanDocViewController: UIViewController,VNDocumentCameraViewControllerDele
         let image = scan.imageOfPage(at: 0)
         
         docImage.image = image
+        let handler = VNImageRequestHandler(cgImage: image.cgImage!, options: [:])
+        do {
+            try handler.perform([textRecognitionRequest])
+        } catch {
+            print(error)
+        }
         
-//        let handler = VNImageRequestHandler(cgImage: image.cgImage!, options: [:])
-//        do {
-////            try handler.perform([textRecognitionRequest])
-//        } catch {
-//            print(error)
+//        guard let extractViewController = storyboard?.instantiateViewController(identifier:  "extract") as? DetailViewController else { //Access to DetailView
+//            fatalError("Couldn't segue")
 //        }
         controller.dismiss(animated: true)
     }

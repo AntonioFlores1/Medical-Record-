@@ -506,7 +506,7 @@
                                 </cells>
                             </collectionView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="7uo-mf-qfc" firstAttribute="leading" secondItem="7Er-Lm-Bhy" secondAttribute="leading" constant="27" id="7bJ-EE-gud"/>
                             <constraint firstItem="7uo-mf-qfc" firstAttribute="top" secondItem="7Er-Lm-Bhy" secondAttribute="top" constant="16.100000381469727" id="Eof-UB-niu"/>
@@ -537,26 +537,39 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Wd6-vs-qx8">
-                                <rect key="frame" x="0.0" y="110" width="414" height="627"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="627.5"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oIu-bx-9Js">
-                                <rect key="frame" x="184" y="740.5" width="49" height="39"/>
+                                <rect key="frame" x="60" y="718.5" width="294" height="39"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                <state key="normal" title="Scan"/>
+                                <state key="normal" title="Extract"/>
                                 <connections>
                                     <action selector="scanButton:" destination="vKz-9S-Gbc" eventType="touchUpInside" id="PQH-dc-OHV"/>
                                 </connections>
                             </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="5oV-SU-K7t">
+                                <rect key="frame" x="106" y="777" width="203" height="32"/>
+                                <segments>
+                                    <segment title="Doc"/>
+                                    <segment title="QR"/>
+                                </segments>
+                                <connections>
+                                    <action selector="cams:" destination="vKz-9S-Gbc" eventType="valueChanged" id="Q61-hD-vkq"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Wd6-vs-qx8" firstAttribute="height" secondItem="Xra-z7-0EO" secondAttribute="height" multiplier="0.7" id="CMb-Oo-8tz"/>
                             <constraint firstItem="Wd6-vs-qx8" firstAttribute="leading" secondItem="JOs-as-jv8" secondAttribute="leading" constant="0.10000000000000001" id="EYY-yp-Ejd"/>
                             <constraint firstItem="JOs-as-jv8" firstAttribute="trailing" secondItem="Wd6-vs-qx8" secondAttribute="trailing" constant="0.10000000000000001" id="GbB-OT-98g"/>
+                            <constraint firstItem="5oV-SU-K7t" firstAttribute="leading" secondItem="JOs-as-jv8" secondAttribute="leading" constant="106" id="Qn0-jR-smN"/>
                             <constraint firstItem="oIu-bx-9Js" firstAttribute="firstBaseline" secondItem="Wd6-vs-qx8" secondAttribute="baseline" constant="30.5" symbolType="layoutAnchor" id="RZI-gy-MdR"/>
-                            <constraint firstItem="oIu-bx-9Js" firstAttribute="leading" secondItem="JOs-as-jv8" secondAttribute="leading" constant="184" id="fC3-pQ-O2X"/>
-                            <constraint firstItem="Wd6-vs-qx8" firstAttribute="top" secondItem="JOs-as-jv8" secondAttribute="top" constant="22" id="gHX-Jy-eE8"/>
-                            <constraint firstItem="JOs-as-jv8" firstAttribute="trailing" secondItem="oIu-bx-9Js" secondAttribute="trailing" constant="181" id="voG-s7-iMo"/>
+                            <constraint firstItem="JOs-as-jv8" firstAttribute="bottom" secondItem="5oV-SU-K7t" secondAttribute="bottom" constant="5" id="Y6Y-Ls-ncX"/>
+                            <constraint firstItem="JOs-as-jv8" firstAttribute="trailing" secondItem="5oV-SU-K7t" secondAttribute="trailing" constant="105" id="aVM-KP-wpL"/>
+                            <constraint firstItem="oIu-bx-9Js" firstAttribute="leading" secondItem="JOs-as-jv8" secondAttribute="leading" constant="60" id="fC3-pQ-O2X"/>
+                            <constraint firstItem="Wd6-vs-qx8" firstAttribute="top" secondItem="JOs-as-jv8" secondAttribute="top" constant="0.10000000000000001" id="gHX-Jy-eE8"/>
+                            <constraint firstItem="JOs-as-jv8" firstAttribute="trailing" secondItem="oIu-bx-9Js" secondAttribute="trailing" constant="60" id="voG-s7-iMo"/>
                             <constraint firstItem="oIu-bx-9Js" firstAttribute="top" secondItem="Wd6-vs-qx8" secondAttribute="bottom" constant="22" id="zW5-U3-tTP"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="JOs-as-jv8"/>
@@ -564,11 +577,43 @@
                     <navigationItem key="navigationItem" id="0Rj-dY-bkY"/>
                     <connections>
                         <outlet property="docImage" destination="Wd6-vs-qx8" id="WST-EO-yo3"/>
+                        <outlet property="extractButton" destination="oIu-bx-9Js" id="vYN-ZE-Mj0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FUr-uW-pC4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2332" y="863"/>
+            <point key="canvasLocation" x="2331.8840579710145" y="862.5"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="XAp-0y-llI">
+            <objects>
+                <viewController id="npa-RU-St2" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ccM-ex-yH0">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="f1J-LQ-jch">
+                                <rect key="frame" x="0.0" y="66" width="414" height="796"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Ci6-u3-D12" firstAttribute="bottom" secondItem="f1J-LQ-jch" secondAttribute="bottom" constant="0.10000000000000001" id="EBT-Pm-zKr"/>
+                            <constraint firstItem="f1J-LQ-jch" firstAttribute="top" secondItem="Ci6-u3-D12" secondAttribute="top" constant="22" id="Isi-H8-53L"/>
+                            <constraint firstItem="Ci6-u3-D12" firstAttribute="trailing" secondItem="f1J-LQ-jch" secondAttribute="trailing" constant="0.10000000000000001" id="w1s-zB-GjW"/>
+                            <constraint firstItem="f1J-LQ-jch" firstAttribute="leading" secondItem="Ci6-u3-D12" secondAttribute="leading" constant="0.10000000000000001" id="x0N-Ta-CQM"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Ci6-u3-D12"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QCO-vB-xBI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3196" y="863"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="2hW-Ge-y1z">
