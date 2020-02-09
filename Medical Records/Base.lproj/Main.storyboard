@@ -419,18 +419,17 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <visualEffectView opaque="NO" alpha="0.90000000000000002" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CCA-5t-Pq7">
-                                <rect key="frame" x="20" y="318" width="367" height="245"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" id="FGj-B4-yp1">
-                                    <rect key="frame" x="0.0" y="0.0" width="367" height="245"/>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CCA-5t-Pq7">
+                                <rect key="frame" x="20" y="304" width="374" height="360"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="FGj-B4-yp1">
+                                    <rect key="frame" x="0.0" y="0.0" width="374" height="360"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dJS-lh-WXv">
-                                            <rect key="frame" x="0.0" y="0.0" width="127" height="117"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="134" height="232"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" id="w7o-Lp-Lkh">
-                                                <rect key="frame" x="0.0" y="0.0" width="127" height="117"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="134" height="232"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             </view>
                                             <vibrancyEffect>
@@ -439,6 +438,9 @@
                                         </visualEffectView>
                                     </subviews>
                                 </view>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="360" id="ebU-IT-pDQ"/>
+                                </constraints>
                                 <blurEffect style="light"/>
                             </visualEffectView>
                         </subviews>
@@ -466,12 +468,15 @@
                             <constraint firstItem="P71-O4-ndB" firstAttribute="top" secondItem="0KO-GD-BAF" secondAttribute="bottom" constant="10" id="ZhH-ps-lG1"/>
                             <constraint firstItem="wda-gn-iZ7" firstAttribute="leading" secondItem="7Er-Lm-Bhy" secondAttribute="leading" constant="45" id="ZzJ-7Y-PPP"/>
                             <constraint firstItem="iOb-RJ-Z0b" firstAttribute="leading" secondItem="7Er-Lm-Bhy" secondAttribute="leading" constant="25" id="bh5-ul-q04"/>
+                            <constraint firstItem="7Er-Lm-Bhy" firstAttribute="trailing" secondItem="CCA-5t-Pq7" secondAttribute="trailing" constant="20" id="dhe-LE-fv0"/>
                             <constraint firstItem="EBb-S9-ZKk" firstAttribute="leading" secondItem="7Er-Lm-Bhy" secondAttribute="leading" constant="25" id="fNn-j1-9SN"/>
+                            <constraint firstItem="CCA-5t-Pq7" firstAttribute="top" secondItem="7uo-mf-qfc" secondAttribute="bottom" constant="35.5" id="orX-NI-a9k"/>
                             <constraint firstItem="7Er-Lm-Bhy" firstAttribute="trailing" secondItem="xEO-Rj-gtW" secondAttribute="trailing" constant="25" id="rCE-Lk-VLZ"/>
                             <constraint firstItem="xEO-Rj-gtW" firstAttribute="leading" secondItem="7Er-Lm-Bhy" secondAttribute="leading" constant="25" id="rZe-o1-mKR"/>
                             <constraint firstItem="BOn-Ty-onc" firstAttribute="leading" secondItem="EBb-S9-ZKk" secondAttribute="trailing" constant="10" id="sup-SA-dcc"/>
                             <constraint firstItem="xEO-Rj-gtW" firstAttribute="leading" secondItem="7Er-Lm-Bhy" secondAttribute="leading" constant="25" id="twe-lr-tNt"/>
                             <constraint firstItem="iOb-RJ-Z0b" firstAttribute="top" secondItem="7uo-mf-qfc" secondAttribute="bottom" constant="50" id="vbq-4b-pnk"/>
+                            <constraint firstItem="CCA-5t-Pq7" firstAttribute="leading" secondItem="7Er-Lm-Bhy" secondAttribute="leading" constant="20" id="w3a-OG-tax"/>
                             <constraint firstItem="A0F-Ry-3o9" firstAttribute="leading" secondItem="7Er-Lm-Bhy" secondAttribute="leading" constant="25" id="yPI-KN-v7R"/>
                             <constraint firstItem="0KO-GD-BAF" firstAttribute="top" secondItem="iOb-RJ-Z0b" secondAttribute="bottom" constant="15" id="zfX-06-LMe"/>
                         </constraints>

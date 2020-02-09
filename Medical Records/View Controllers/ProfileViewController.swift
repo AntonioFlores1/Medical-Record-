@@ -36,6 +36,9 @@ class ProfileViewController: UIViewController {
         blur.effect = nil 
         toggle.isOn = false
         
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.title = "My Profile"
+        
         loadData()
         
         profileView.layer.shadowColor =  #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
