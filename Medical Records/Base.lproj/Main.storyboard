@@ -293,6 +293,7 @@
                     <connections>
                         <outlet property="allergyTextField" destination="PJj-WR-lgN" id="XR4-BD-hmT"/>
                         <outlet property="create" destination="8ac-fy-HPF" id="KM0-mf-3CG"/>
+                        <outlet property="saveButton" destination="K07-sK-n3M" id="66x-78-m3l"/>
                         <outlet property="searchBar" destination="oqk-PU-OKv" id="vXM-XW-bdG"/>
                         <outlet property="searchListTableView" destination="VeD-fZ-crD" id="t6v-nm-8iC"/>
                         <outlet property="severityTextField" destination="3af-jW-svR" id="ezS-74-9Ub"/>
@@ -311,10 +312,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" sectionIndexMinimumDisplayRowCount="5" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1Yo-Ut-peP">
-                                <rect key="frame" x="0.0" y="308" width="414" height="411"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="411" id="NHp-5n-4OX"/>
-                                </constraints>
+                                <rect key="frame" x="0.0" y="308" width="414" height="505"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="profile" id="wbg-wS-biy" customClass="ProfileTableViewCell" customModule="Medical_Records" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
@@ -469,42 +467,6 @@
                                     <constraint firstItem="p7z-Kd-h4u" firstAttribute="leading" secondItem="7uo-mf-qfc" secondAttribute="leading" constant="8" id="wCc-vw-Qed"/>
                                 </constraints>
                             </view>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="UXi-RB-Wnz">
-                                <rect key="frame" x="0.0" y="719" width="414" height="94"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="G43-A2-q51">
-                                    <size key="itemSize" width="96" height="86"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Ch6-G7-bpf">
-                                        <rect key="frame" x="0.0" y="0.0" width="96" height="86"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="e4A-Hn-N0U">
-                                            <rect key="frame" x="0.0" y="0.0" width="96" height="86"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="emE-dk-DOx">
-                                                    <rect key="frame" x="0.0" y="0.0" width="96" height="86"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="emE-dk-DOx" firstAttribute="top" secondItem="e4A-Hn-N0U" secondAttribute="top" constant="0.10000000000000001" id="BQx-Ml-w2r"/>
-                                                <constraint firstAttribute="trailing" secondItem="emE-dk-DOx" secondAttribute="trailing" constant="0.10000000000000001" id="DlN-TA-301"/>
-                                                <constraint firstItem="emE-dk-DOx" firstAttribute="leading" secondItem="e4A-Hn-N0U" secondAttribute="leading" constant="0.10000000000000001" id="YE2-fb-xIL"/>
-                                                <constraint firstAttribute="bottom" secondItem="emE-dk-DOx" secondAttribute="bottom" constant="0.10000000000000001" id="swm-dg-oEg"/>
-                                            </constraints>
-                                        </collectionViewCellContentView>
-                                        <size key="customSize" width="96" height="86"/>
-                                    </collectionViewCell>
-                                </cells>
-                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -514,6 +476,7 @@
                             <constraint firstItem="7Er-Lm-Bhy" firstAttribute="trailing" secondItem="7uo-mf-qfc" secondAttribute="trailing" constant="27" id="NcL-Zp-y4I"/>
                             <constraint firstItem="1Yo-Ut-peP" firstAttribute="top" secondItem="7uo-mf-qfc" secondAttribute="bottom" constant="39.5" id="NpI-Mt-KMO"/>
                             <constraint firstItem="1Yo-Ut-peP" firstAttribute="leading" secondItem="7Er-Lm-Bhy" secondAttribute="leading" constant="0.10000000000000001" id="qni-2d-9gS"/>
+                            <constraint firstItem="7Er-Lm-Bhy" firstAttribute="bottom" secondItem="1Yo-Ut-peP" secondAttribute="bottom" constant="0.10000000000000001" id="r3p-2h-FV4"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="7Er-Lm-Bhy"/>
                     </view>
@@ -540,37 +503,23 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="627.5"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oIu-bx-9Js">
-                                <rect key="frame" x="60" y="718.5" width="294" height="39"/>
+                                <rect key="frame" x="60" y="747.5" width="294" height="39"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <state key="normal" title="Extract"/>
                                 <connections>
                                     <action selector="scanButton:" destination="vKz-9S-Gbc" eventType="touchUpInside" id="PQH-dc-OHV"/>
                                 </connections>
                             </button>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="5oV-SU-K7t">
-                                <rect key="frame" x="106" y="777" width="203" height="32"/>
-                                <segments>
-                                    <segment title="Doc"/>
-                                    <segment title="QR"/>
-                                </segments>
-                                <connections>
-                                    <action selector="cams:" destination="vKz-9S-Gbc" eventType="valueChanged" id="Q61-hD-vkq"/>
-                                </connections>
-                            </segmentedControl>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Wd6-vs-qx8" firstAttribute="height" secondItem="Xra-z7-0EO" secondAttribute="height" multiplier="0.7" id="CMb-Oo-8tz"/>
                             <constraint firstItem="Wd6-vs-qx8" firstAttribute="leading" secondItem="JOs-as-jv8" secondAttribute="leading" constant="0.10000000000000001" id="EYY-yp-Ejd"/>
                             <constraint firstItem="JOs-as-jv8" firstAttribute="trailing" secondItem="Wd6-vs-qx8" secondAttribute="trailing" constant="0.10000000000000001" id="GbB-OT-98g"/>
-                            <constraint firstItem="5oV-SU-K7t" firstAttribute="leading" secondItem="JOs-as-jv8" secondAttribute="leading" constant="106" id="Qn0-jR-smN"/>
-                            <constraint firstItem="oIu-bx-9Js" firstAttribute="firstBaseline" secondItem="Wd6-vs-qx8" secondAttribute="baseline" constant="30.5" symbolType="layoutAnchor" id="RZI-gy-MdR"/>
-                            <constraint firstItem="JOs-as-jv8" firstAttribute="bottom" secondItem="5oV-SU-K7t" secondAttribute="bottom" constant="5" id="Y6Y-Ls-ncX"/>
-                            <constraint firstItem="JOs-as-jv8" firstAttribute="trailing" secondItem="5oV-SU-K7t" secondAttribute="trailing" constant="105" id="aVM-KP-wpL"/>
                             <constraint firstItem="oIu-bx-9Js" firstAttribute="leading" secondItem="JOs-as-jv8" secondAttribute="leading" constant="60" id="fC3-pQ-O2X"/>
                             <constraint firstItem="Wd6-vs-qx8" firstAttribute="top" secondItem="JOs-as-jv8" secondAttribute="top" constant="0.10000000000000001" id="gHX-Jy-eE8"/>
                             <constraint firstItem="JOs-as-jv8" firstAttribute="trailing" secondItem="oIu-bx-9Js" secondAttribute="trailing" constant="60" id="voG-s7-iMo"/>
-                            <constraint firstItem="oIu-bx-9Js" firstAttribute="top" secondItem="Wd6-vs-qx8" secondAttribute="bottom" constant="22" id="zW5-U3-tTP"/>
+                            <constraint firstItem="oIu-bx-9Js" firstAttribute="top" secondItem="Wd6-vs-qx8" secondAttribute="bottom" constant="32" id="zW5-U3-tTP"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="JOs-as-jv8"/>
                     </view>
@@ -584,10 +533,10 @@
             </objects>
             <point key="canvasLocation" x="2331.8840579710145" y="862.5"/>
         </scene>
-        <!--View Controller-->
+        <!--Extract View Controller-->
         <scene sceneID="XAp-0y-llI">
             <objects>
-                <viewController id="npa-RU-St2" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="extract" id="npa-RU-St2" customClass="ExtractViewController" customModule="Medical_Records" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ccM-ex-yH0">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -610,6 +559,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Ci6-u3-D12"/>
                     </view>
+                    <connections>
+                        <outlet property="extractTextView" destination="f1J-LQ-jch" id="N0L-VO-T3q"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QCO-vB-xBI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

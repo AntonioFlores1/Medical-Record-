@@ -24,6 +24,7 @@ class ScanDocViewController: UIViewController,VNDocumentCameraViewControllerDele
     
     var extract = false
     
+    var myData: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,7 +44,7 @@ class ScanDocViewController: UIViewController,VNDocumentCameraViewControllerDele
                         self.recognizedText += candidiate.string
                         self.recognizedText += "\n"
                     }
-//                    self.catDetailsTextView.text = self.recognizedText
+                    self.myData = self.recognizedText
                 }
             }
         })
@@ -92,9 +93,14 @@ class ScanDocViewController: UIViewController,VNDocumentCameraViewControllerDele
             print(error)
         }
         
-//        guard let extractViewController = storyboard?.instantiateViewController(identifier:  "extract") as? DetailViewController else { //Access to DetailView
-//            fatalError("Couldn't segue")
-//        }
+        guard let extractViewController = storyboard?.instantiateViewController(identifier:  "extract") as? ExtractViewController else {
+            fatalError("Couldn't segue")
+        }
+        
+        
         controller.dismiss(animated: true)
+        extractViewController.dataExtract = myData
+        present(extractViewController, animated: true, completion: nil)
+        
     }
 }

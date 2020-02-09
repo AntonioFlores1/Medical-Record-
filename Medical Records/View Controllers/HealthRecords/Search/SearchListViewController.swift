@@ -24,6 +24,7 @@ class SearchListViewController: UIViewController {
     
     @IBOutlet weak var severityTextField: UITextField!
     
+    @IBOutlet weak var saveButton: UIButton!
     
     var dummy: String?
   
@@ -58,7 +59,7 @@ class SearchListViewController: UIViewController {
         searchListTableView.delegate = self
         searchBar.delegate = self
         self.create.transform = CGAffineTransform.init(translationX: 0, y: 800)
-        
+        saveButton.setTitle("Cancel", for: .normal)
     }
    
     
@@ -68,6 +69,8 @@ class SearchListViewController: UIViewController {
         UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
             self.create.transform = CGAffineTransform.init(translationX: 0, y: 0)
         })
+        
+        
 
     }
     
